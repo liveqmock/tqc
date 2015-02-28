@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://www.eclipse.org/jetty/configure.dtd">
+<Configure class="org.eclipse.jetty.webapp.WebAppContext">
+	<New id="tqcDS" class="org.eclipse.jetty.plus.jndi.Resource">
+		<Arg>java:jboss/datasources/tqcDS</Arg>
+		<Arg>
+			<New class="org.apache.commons.dbcp.BasicDataSource">
+				<Set name="driverClassName">oracle.jdbc.driver.OracleDriver</Set>
+				<Set name="url">jdbc:oracle:thin:@192.168.0.110:1521:testdb</Set>
+				<Set name="username">tqc</Set>
+				<Set name="password">tqc</Set>
+				<Set name="maxActive">10</Set>
+			</New>
+		</Arg>
+	</New>
+</Configure>  

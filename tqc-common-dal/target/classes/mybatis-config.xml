@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="lazyLoadingEnabled" value="false" />
+	</settings>
+	<typeAliases>
+		<typeAlias alias="UserDO" type="com.pinganfu.tqc.common.dal.model.UserDO" />
+		<typeAlias alias="CommonUserDO" type="com.pinganfu.tqc.common.dal.model.rbac.CommonUserDO" />
+		<typeAlias alias="CommonRoleDO" type="com.pinganfu.tqc.common.dal.model.rbac.CommonRoleDO" />
+		<typeAlias alias="CommonNodeDO" type="com.pinganfu.tqc.common.dal.model.rbac.CommonNodeDO" />
+		<typeAlias alias="CommonUserRoleRelDO" type="com.pinganfu.tqc.common.dal.model.rbac.CommonUserRoleRelDO" />
+	</typeAliases>
+
+	<plugins>
+		<plugin interceptor="com.pinganfu.common.log.SQLLogInterceptor" />
+	</plugins>
+
+</configuration>

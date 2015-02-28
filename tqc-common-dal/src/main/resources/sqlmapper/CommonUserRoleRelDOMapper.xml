@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pinganfu.tqc.common.dal.dao.rbac.CommonUserRoleRelDao">
+	<resultMap id="BaseResultMap"
+		type="CommonUserRoleRelDO">
+		<result column="user_id" property="userId" jdbcType="INTEGER" />
+		<result column="role_id" property="roleId" jdbcType="INTEGER" />
+	</resultMap>
+	<insert id="insert"
+		parameterType="CommonUserRoleRelDO">
+		insert into t_common_user_role_rel (user_id, role_id)
+		values (#{userId,jdbcType=INTEGER}, #{roleId,jdbcType=INTEGER})
+	</insert>
+</mapper>

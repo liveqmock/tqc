@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Application context definition. -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/jdbc
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/jdbc/spring-jdbc.xsd"
+	default-autowire="byName">
+
+	<!-- hibernate3 sessionfactory配置 使用AnnotationSessionFactoryBean创建基于JPA注解的SessionFactory -->
+<!-- 	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		引用数据源
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="namingStrategy">
+			<bean class="org.hibernate.cfg.ImprovedNamingStrategy" />
+		</property>
+		hibernate的属性具体见hibernate文档
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.OracleDialect
+				</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+				非0值 指定jdbc抓取数量的大小调用Statement.setFetchSize()
+				<prop key="hibernate.jdbc.fetch_size">${hibernate.jdbc.fetch_size}</prop>
+				jdbc批量更新 建议5到30
+				<prop key="hibernate.jdbc.batch_size">${hibernate.jdbc.batch_size}</prop>
+				说明一下：如果不设置查询缓存，那么hibernate只会缓存使用load()方法获得的单个持久化对象 如果想缓存使用findall()、list()、Iterator()、createCriteria()、createQuery() 
+					等方法获得的数据结果集的话就需要设置hibernate.cache.use_query_cache true 才行
+				<prop key="hibernate.cache.use_query_cache">${hibernate.cache.use_query_cache}</prop> 
+					<prop key="hibernate.cache.provider_class"> org.hibernate.cache.EhCacheProvider 
+					</prop> <prop key="hibernate.cache.provider_configuration_file_resource_path"> 
+					${hibernate.ehcache_config_file} </prop> 
+			</props>
+		</property>
+
+		配置扫描包
+		<property name="packagesToScan" value="com.pinganfu.tqc.common.dal.model" />
+	</bean>
+
+	<bean id="hibernateBaseDaoImpl"
+		class="com.pinganfu.tqc.common.dal.hibernate.HibernateBaseDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean> -->
+
+</beans>

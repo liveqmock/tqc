@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="paff-web">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/filter"/>
+        <dependent-module archiveName="tqc-biz-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tqc-biz/tqc-biz">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="tqc-service-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tqc-service/tqc-service">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="tqc-common-dal-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tqc-common-dal/tqc-common-dal">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="tqc-common-util-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tqc-common-util/tqc-common-util">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="tqc-common-integration-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tqc-common-integration/tqc-common-integration">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="tqc-common-facade-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tqc-common-facade/tqc-common-facade">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path" value="/paff-web/target/classes"/>
+        <property name="context-root" value="tqc"/>
+    </wb-module>
+</project-modules>

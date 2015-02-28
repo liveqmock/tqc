@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jboss-deployment-structure>
+	<deployment>
+		<exclusions>
+			<module name="org.jboss.ws.cxf" />
+			<module name="org.apache.cxf" />
+			<module name="org.jboss.as.webservices" />
+			<module name="org.jboss.ws.jaxws-client" />
+		</exclusions>
+	</deployment>
+</jboss-deployment-structure>

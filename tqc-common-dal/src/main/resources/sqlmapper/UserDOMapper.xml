@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UserDO">
+
+	<resultMap type="UserDO" id="UserDOMap">
+		<id column="user_id" property="userId" />
+		<result column="user_name" property="userName" />
+		<result column="pwd" property="pwd" />
+		<result column="mobile" property="mobile" />
+		<result column="email" property="email" />
+		<result column="personal_id" property="personalId" />
+	</resultMap>
+
+	<sql id="queryParam">
+		<choose>
+			<when test="userName !=null and userName !=''">
+				AND USER_NAME LIKE CONCAT(CONCAT('%', #{userName}),
+				'%')
+			</when>
+		</choose>
+	</sql>
+
+	<select id="count" resultType="java.lang.Integer">
+		SELECT
+			COUNT(1) 
+		FROM 
+			T_TQC_USER 
+		WHERE 
+			1=1
+		<include refid="queryParam" />
+	</select>
+
+	<select id="queryOne" resultMap="UserDOMap" parameterType="UserDO">
+		SELECT
+			USER_ID,USER_NAME 
+		FROM
+			T_TQC_USER 
+		WHERE
+			1=1
+		<include refid="queryParam" />
+	</select>
+
+	<select id="query" resultMap="UserDOMap" parameterType="UserDO">
+		SELECT
+			USER_ID,USER_NAME 
+		FROM T_TQC_USER WHERE 1=1
+		<include refid="queryParam" />
+	</select>
+
+	<insert id="add" parameterType="UserDO">
+		INSERT 
+		INTO T_TQC_USER (USER_NAME, PWD, MOBILE, EMAIL, PERSONAL_ID)
+		VALUES (#{userName}, #{pwd}, #{mobile}, #{email}, #{personalId})
+	</insert>
+
+	<delete id="deleteByPK" parameterType="java.lang.Integer">
+		DELETE T_TQC_USER 
+		WHERE USER_ID=#{userId}
+	</delete>
+
+	<select id="queryByPK" parameterType="java.lang.Integer" resultMap="UserDOMap">
+		SELECT
+			USER_ID,USER_NAME
+		FROM 
+			T_TQC_USER 
+		WHERE
+			USER_ID=#{userId}
+	</select>
+
+	<update id="updateByPK" parameterType="UserDO">
+		UPDATE 
+			T_TQC_USER 
+		SET 
+			USER_NAME=#{userName} 
+		WHERE 
+			USER_ID=#{userId}
+	</update>
+
+</mapper>

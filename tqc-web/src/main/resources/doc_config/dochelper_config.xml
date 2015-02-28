@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<documnet title = "MTP-接口文档" savepath="D:\doc">
+	<!-- block 属性介绍
+		name:  块名称(如引言、P1xiey)
+		type:  只可以取 preface(引言) content(协议) appendix（附录） 三个之一;
+		ftl:   指向resources/doctftl/下的freemarker文件名;
+		target:需要导出协议的目标， 到包名即可.-->
+	<block type="preface" ftl="preface" name="引言"/>
+	<block type="content" ftl="detail" target="com.pinganfu.tqc.web.controller.p1" name="P1协议"/>
+	<block type="content" ftl="detail" target="com.pinganfu.tqc.web.controller.p2" name="P2协议"/>
+	<block type="content" ftl="detail" target="com.pinganfu.tqc.web.controller.h5" name="H5协议"/>
+	<block type="appendix" ftl="apdx_banks" name="附录1 银行名称"/>
+	<block type="appendix" ftl="apdx_busstype" name="附录2 业务名称"/>
+	<block type="appendix" ftl="apdx_tradetype" name="附录3 交易类型"/>
+</documnet>
